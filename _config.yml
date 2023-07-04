@@ -42,7 +42,7 @@ social:
   email: said.santiago@gmail.com             # change to your email address
   links:
     - https://twitter.com/santi_said      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://github.com/ssaid       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/santiago-javier-said-58813221/
@@ -53,23 +53,11 @@ google_site_verification:               # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id:                 # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
+  id: G-JLXR0J1P5Z
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
     cache_path:       # the local PV cache data, friendly to visitors from GFW region
 
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light  - Use the light color scheme
-#     dark   - Use the dark color scheme
-#
 theme_mode: dark   # [light|dark]
 
 # The CDN endpoint for images.
@@ -197,3 +185,14 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      categories: [docker,doodba,k8s,ansible,linux,python,bash,gitlab,github,networking,odoo]
+      tags: []
+    posts:
+      categories: [docker,doodba,k8s,ansible,linux,python,bash,gitlab,github,networking,odoo]
+      tags: []
+      image:
+        path:
