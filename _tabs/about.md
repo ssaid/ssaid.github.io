@@ -5,7 +5,7 @@ order: 4
 ---
 Aloha! Welcome to my blog, where I share my passion for technology and explore the exciting world of cutting-edge innovations. Here's a glimpse into who I am and what I bring to the table.
 
-I am currently the technical leader at Eynes SRL, overseeing a talented team of more than 10 individuals. Working in a dynamic environment, I strive to stay at the forefront of emerging technologies, always seeking opportunities to expand my knowledge and expertise. As a testament to my commitment to continuous learning, I have earned certifications in Kubernetes, enabling me to navigate the ever-evolving landscape of containerization.
+I am currently the technical leader at [Eynes SRL](https://eynes.com.ar/), overseeing a talented technical team of more than 12 individuals. Working in a dynamic environment, I strive to stay at the forefront of emerging technologies, always seeking opportunities to expand my knowledge and expertise. As a testament to my commitment to continuous learning, I have earned certifications in Kubernetes, enabling me to navigate the ever-evolving landscape of containerization.
 
 Linux and Vim hold a special place in my heart. I have a deep appreciation for the power and flexibility of Linux-based systems, and Vim has become my go-to text editor for its efficiency and customization capabilities. It's safe to say that my enthusiasm for these technologies runs deep.
 
