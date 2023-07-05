@@ -57,6 +57,79 @@ Here's an example output after taking appropriate measures:
   0.00%   0.00%   0.060s    461.0s   action_confirm (logistic_transport/models/micrologistic_settlement.py)
 ```
 
+### Checking with the odoo profiler
+```
+modified: models/micrologistic_settlement.py
+@ models/micrologistic_settlement.py:24 @
+...
+from odoo.tools.profiler import profile
+
+
+class MicrologisticSettlement(models.Model):
+@ models/micrologistic_settlement.py:106 @ class MicrologisticSettlement(models.Model):
+            )
+        return action
+
+    @profile
+    def undo_settling(self):
+        for settlement in self:
+            for picking in settlement.picking_ids:
+@ models/micrologistic_settlement.py:125 @ class MicrologisticSettlement(models.Model):
+        return True
+
+```
+
+```
+odoo_1                        | 2023-07-05 14:50:06,187 1 INFO devel odoo.tools.profiler:
+odoo_1                        | calls     queries   ms
+odoo_1                        | micrologistic.settlement --------------------- /opt/odoo/auto/addons/logistic_transport/models/micrologistic_settlement.py, 106
+odoo_1                        |
+odoo_1                        | 1         0         0.01          @profile
+odoo_1                        |                                   def undo_settling(self):
+odoo_1                        | 3         0         0.03              for settlement in self:
+odoo_1                        | 26        25        408.55                for picking in settlement.picking_ids:
+odoo_1                        | 24        0         0.08                      picking.write(
+odoo_1                        |                                                   {
+odoo_1                        | 24        0         0.07                              "micrologistic_amount": 0,
+odoo_1                        | 24        0         0.09                              'carry_rates': '',
+odoo_1                        | 24        319       44426.83                          'rates_values': 0,
+odoo_1                        |                                                   }
+odoo_1                        |                                               )
+odoo_1                        | 1         0         0.0                   settlement.write(
+odoo_1                        |                                               {
+odoo_1                        | 1         1         2.9                           "total_amount": 0,
+odoo_1                        |                                               }
+odoo_1                        |                                           )
+odoo_1                        | 1         0         0.0               return True
+odoo_1                        |
+odoo_1                        | Total:
+odoo_1                        | 1         345       44838.56
+```
+
+```
+odoo_1                        | 2023-07-05 15:24:01,817 1 INFO devel odoo.tools.profiler:
+odoo_1                        | calls     queries   ms
+odoo_1                        | micrologistic.settlement --------------------- /opt/odoo/auto/addons/logistic_transport/models/micrologistic_settlement.py, 134
+odoo_1                        |
+odoo_1                        | 1         0         0.01          @api.multi
+odoo_1                        |                                   @profile
+odoo_1                        |                                   def action_draft(self):
+odoo_1                        | 1         2         43.97             self.undo_settling()
+odoo_1                        | 1         0         0.01              q1 = "UPDATE stock_picking SET microsettlement_id=NULL WHERE microsettlement_id IN %(ids)s"
+odoo_1                        | 1         0         0.0               q_p = {'ids': self._ids}
+odoo_1                        | 1         1         45.55             self._cr.execute(q1, q_p)
+odoo_1                        | 1         0         0.01              q2 = "DELETE FROM micrologistic_settlement_route_line WHERE microsettlement_id IN %(ids)s"
+odoo_1                        | 1         1         0.45              self._cr.execute(q2, q_p)
+odoo_1                        |                                       # self.picking_ids.write({"microsettlement_id": False})
+odoo_1                        |                                       # self.route_lines.unlink()
+odoo_1                        | 1         0         0.0               q3 = "UPDATE micrologistic_settlement SET state='draft' WHERE id IN %(ids)s"
+odoo_1                        | 1         1         0.47              self._cr.execute(q3, q_p)
+odoo_1                        | 1         0         0.0               return True
+odoo_1                        |
+odoo_1                        | Total:
+odoo_1                        | 1         5         90.48
+```
+
 ## Conclusion
 In this blog post, we introduced the powerful utility py-spy, which empowers developers to analyze stacktraces and identify performance bottlenecks effortlessly. We discussed the approach to problem-solving by inspecting both Python code and the database using py-spy. By leveraging this tool effectively, you can optimize your application's performance and enhance the user experience.
 
