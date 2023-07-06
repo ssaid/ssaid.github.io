@@ -68,7 +68,7 @@ theme_mode: dark   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://pbs.twimg.com/profile_images/1676731385988493313/ErVNo38F_400x400.jpg
+avatar: https://pbs.twimg.com/profile_images/1677085921999560704/VTa5onO6_400x400.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -187,6 +187,7 @@ jekyll-archives:
     category: /categories/:name/
 
 jekyll_compose:
+  auto_open: true
   default_front_matter:
     drafts:
       categories: [docker,doodba,k8s,ansible,linux,python,bash,gitlab,github,networking,odoo]
