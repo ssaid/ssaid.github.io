@@ -5,9 +5,9 @@ order: 4
 ---
 Aloha! Welcome to my blog, where I share my passion for technology and explore the exciting world of cutting-edge innovations. Here's a glimpse into who I am and what I bring to the table.
 
-I am currently the technical leader at [Eynes SRL](https://eynes.com.ar/), overseeing a talented technical team of more than 12 individuals. Working in a dynamic environment, I strive to stay at the forefront of emerging technologies, always seeking opportunities to expand my knowledge and expertise. As a testament to my commitment to continuous learning, I have earned certifications in Kubernetes, enabling me to navigate the ever-evolving landscape of containerization.
+I am currently the technical leader at [Eynes SRL](https://eynes.com.ar/), overseeing a talented technical team of more than 12 individuals. Working in a dynamic environment, I strive to stay at the forefront of emerging technologies, always seeking opportunities to expand my knowledge and expertise. As a proof of my commitment to continuous learning, I have earned a certification in Kubernetes, that enabled me to navigate the ever-evolving landscape of containerization.
 
-Linux and Vim hold a special place in my heart. I have a deep appreciation for the power and flexibility of Linux-based systems, and Vim has become my go-to text editor for its efficiency and customization capabilities. It's safe to say that my enthusiasm for these technologies runs deep.
+Linux and Vim hold a special place in my heart. I have a deep appreciation for the power and flexibility of Linux-based systems, and Vim has become my go-to text editor for its efficiency and customization capabilities.
 
 Beyond the tech realm, I am also an avid glider pilot, with aspirations of becoming a private pilot in the near future. The thrill of soaring through the skies and experiencing the freedom of flight brings me immense joy and fulfillment. When I'm not immersed in technology or gliding through the air, I love to travel and seek out new adventures. Exploring different cultures, landscapes, and cuisines is a source of inspiration and personal growth for me.
 
