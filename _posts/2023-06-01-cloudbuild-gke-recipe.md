@@ -10,7 +10,9 @@ tags:
 - gcp
 - cloudbuild
 - gke
-date: 2023-06-01 20:56 -0300
+image:
+  path: https://res.cloudinary.com/practicaldev/image/fetch/s--wOieL0rC--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/uhb8lo6u88bb6hdywhf8.png
+date: 2023-09-04 08:00 -0300
 ---
 In modern software development workflows, automation plays a crucial role in streamlining the build and deployment processes. Google Cloud Build, combined with Kubernetes, offers a powerful solution for automating the building and deployment of applications on Google Cloud Platform. In this blog post, we'll explore a sample cloudbuild.yaml file and a Kubernetes manifest file that work together to automate the build and deployment of a project.
 There are two repositories, one of the app source code and the other of the environment.
