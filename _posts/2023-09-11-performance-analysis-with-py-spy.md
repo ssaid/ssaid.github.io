@@ -8,6 +8,8 @@ categories:
 tags:
 - tools
 - py-spy
+image:
+  path: https://media.licdn.com/dms/image/D4D22AQEByvoRRVHbTg/feedshare-shrink_800/0/1694367956806?e=1697068800&v=beta&t=c4urNIHcGP_2rAfOiNsOjrwpDrc1SyshnN9bNQW-a5c
 date: 2023-09-11 20:50 -0300
 ---
 In today's blog post, we will explore the powerful utility called py-spy, which allows developers to dive deep into the stacktrace and effortlessly identify the root causes of performance issues. We'll discuss how to approach problems using py-spy and showcase its effectiveness in introspecting both Python code and the database. Let's get started!
